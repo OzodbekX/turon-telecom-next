@@ -1,9 +1,9 @@
 import classNames from 'classnames'
-import { useTranslation } from 'react-i18next'
-import { NavLink } from 'react-router-dom'
 import { Accordion } from './Accordion'
-import { MenuItem } from 'Components/Header/types'
+import { MenuItem } from '@/components/Header/types'
+import {useTranslations} from "next-intl";
 import './MainMenu.scss'
+import NavLink from "@/components/NavLink";
 
 interface mainMenuProps {
   mainMenu: MenuItem[]
@@ -11,13 +11,13 @@ interface mainMenuProps {
 }
 
 export const MainMenu = ({ onClose, mainMenu }: mainMenuProps) => {
-  const { t } = useTranslation()
+  const t = useTranslations()
 
   return (
     <div className="burge-main-menu">
       <NavLink
         className={({ isActive }) => classNames('main-page-link', { active: isActive })}
-        to={'/'}
+        href={'/'}
         onClick={onClose}
       >
         {t('main')}

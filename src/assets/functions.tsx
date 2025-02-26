@@ -1,3 +1,4 @@
+'use client'
 import moment from 'moment/moment'
 import React from 'react'
 import { FormInstance } from 'antd'
@@ -181,7 +182,7 @@ export const isPlatformAndroid = /android/i.test(userAgent)
 export const isPlatformIOS = /iPad|iPhone|iPod/i.test(userAgent)
 
 export const makePhoneCall = () => {
-  const userAgent = navigator.userAgent || navigator.vendor
+  const userAgent =navigator ? navigator.userAgent || navigator.vendor:""
   if (/Mobile/i.test(userAgent)) {
     openUrl('tel:1132')
   } else if (isPlatformAndroid) {

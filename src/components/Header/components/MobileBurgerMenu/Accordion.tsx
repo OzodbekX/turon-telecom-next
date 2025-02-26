@@ -1,9 +1,11 @@
+'use client'
 import { IconChevronRight } from '@/assets/icons/Regular'
 import classNames from 'classnames'
 import { useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
 import { MenuItem } from '@/components/Header/types'
 import {useTranslations} from "next-intl";
+import {usePathname} from "next/navigation";
+import NavLink from "@/components/NavLink";
 import './Accordion.scss'
 
 interface AccordionProps {
@@ -14,7 +16,8 @@ interface AccordionProps {
 export const Accordion = ({ onLinkClick, mainMenu }: AccordionProps) => {
   const t = useTranslations()
   const [active, setActive] = useState(0)
-  const { pathname } = useLocation()
+  const pathname = usePathname()
+
 
   const openPanel = (index: number) => {
     if (index == active) {
@@ -37,7 +40,7 @@ export const Accordion = ({ onLinkClick, mainMenu }: AccordionProps) => {
           return (
             <li key={index} className={classNames('item', { active: active == index + 1 })}>
               <NavLink
-                to={item.path as string}
+                href={item.path as string}
                 className={({ isActive }) => classNames('accordion-button', { active: isActive })}
                 onClick={handleLinkClick}
               >
@@ -71,7 +74,7 @@ export const Accordion = ({ onLinkClick, mainMenu }: AccordionProps) => {
                           className={({ isActive }) =>
                             classNames('panel-link', { active: isActive })
                           }
-                          to={child.path as string}
+                          href={child.path as string}
                           onClick={handleLinkClick}
                         >
                           {t(child.title)}

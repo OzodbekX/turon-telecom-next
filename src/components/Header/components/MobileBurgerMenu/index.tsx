@@ -1,25 +1,27 @@
+'use client'
 import {FC, useState} from 'react'
 import classNames from 'classnames'
-import {IconClose, IconMenu, IconUser} from 'Assets/icons/Regular'
-import {useTranslation} from 'react-i18next'
+import {IconClose, IconMenu, IconUser} from '@/assets/icons/Regular'
 import {ExtraMenu} from './ExtraMenu'
 import {MainMenu} from './MainMenu'
-import ConnectionApplication from 'Components/ConnectionApplication'
+// import ConnectionApplication from '@/components/ConnectionApplication'
 import {useLockBodyScroll} from '@/assets/hooks/useLockBodyScroll'
 import CustomButton from '@/components/CustomButton'
 import {formatPhoneNumber} from '@/assets/functions'
 import {MenuItem} from '@/components/Header/types'
 import {useSelector} from "react-redux";
+import {RootState} from "@/store/store";
+import {useTranslations} from "next-intl";
 import './index.scss'
 
 const MobileBurgerMenu: FC<{
     mainMenu: MenuItem[]
     setUserControllerModal: (v: boolean) => void
 }> = ({mainMenu, setUserControllerModal}) => {
-    const {t} = useTranslation()
+    const t = useTranslations()
     const [isOpen, setIsOpen] = useState(false)
     const [isModalVisible, setIsModalVisible] = useState({open: false, step: 1})
-    const {turonId, userInfo} = useSelector((state) => state?.user)
+    const {turonId, userInfo} = useSelector((state:RootState) => state?.user)
 
     useLockBodyScroll({isLocked: isOpen})
 
@@ -84,10 +86,10 @@ const MobileBurgerMenu: FC<{
                 </div>
                 {isOpen && <div className="overlay" onClick={handleClose}/>}
             </div>
-            <ConnectionApplication
-                isModalVisible={isModalVisible}
-                setIsModalVisible={setIsModalVisible}
-            />
+            {/*<ConnectionApplication*/}
+            {/*    isModalVisible={isModalVisible}*/}
+            {/*    setIsModalVisible={setIsModalVisible}*/}
+            {/*/>*/}
         </>
     )
 }

@@ -1,3 +1,4 @@
+'use client'
 import React, {FC, lazy, Suspense, useState} from 'react'
 import {IconCallCallingFilled, IconVideoCircleFilled} from '@/assets/icons/Filled'
 import CustomButton from '@/components/CustomButton'
