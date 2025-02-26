@@ -1,0 +1,16 @@
+.extra-menu {
+  margin-bottom: 20px;
+  display: grid;
+  gap: 20px;
+
+  .extra-menu-link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #74767a;
+
+    &.active {
+      color: #eb2343;
+    }
+  }
+}

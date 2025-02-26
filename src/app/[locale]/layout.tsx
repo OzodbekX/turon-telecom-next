@@ -5,8 +5,8 @@ import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import "../globals.css";
-import {wrapper} from "@/store/store";
 import {ReduxProvider} from "@/store/redux-provider";
+import {AntdRegistry} from "@ant-design/nextjs-registry";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -42,12 +42,13 @@ async function RootLayout({
     const messages = await getMessages();
 
     return (
-        <html lang="en">
+        <html lang="uz">
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <NextIntlClientProvider messages={messages}>
             <ReduxProvider>
-                {children}
-
+                <AntdRegistry>
+                    {children}
+                </AntdRegistry>
             </ReduxProvider>
         </NextIntlClientProvider>
         </body>

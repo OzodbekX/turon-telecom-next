@@ -1,0 +1,87 @@
+@mixin text-size-weight($size: '16px') {
+  height: $size;
+  width: $size;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+
+$size-16: 16px;
+$size-20: 20px;
+$size-24: 24px;
+$size-40: 40pc;
+$size-50: 50px;
+
+.icon-location-micro-16 {
+  background-image: url('/public/icons/location_micro_16.svg');
+  @include text-size-weight($size-16);
+}
+
+.icon-wallet-micro-16 {
+  background-image: url('/public/icons/wallet_micro_16.svg');
+  @include text-size-weight($size-16);
+}
+
+.icon-call-calling-micro-16 {
+  background-image: url('/public/icons/call_calling_micro_16.svg');
+  @include text-size-weight($size-16);
+}
+
+.icon-moon-16 {
+  background-image: url('/public/icons/moon_16.svg');
+  @include text-size-weight($size-16);
+}
+
+.icon-monitor-mobile-16 {
+  background-image: url('/public/icons/monitor_mobbile_16.svg');
+  @include text-size-weight($size-20);
+}
+
+.icon-call-calling-20 {
+  background-image: url('/public/icons/call_calling_20.svg');
+  @include text-size-weight($size-20);
+}
+
+.icon-tv-2-20 {
+  background-image: url('/public/icons/tv_02_20.svg');
+  @include text-size-weight($size-20);
+}
+
+.icon-location-small-20 {
+  background-image: url('/public/icons/location_small_20.svg');
+  @include text-size-weight($size-20);
+}
+
+.icon-checkbox-24 {
+  background-image: url('/public/icons/checkbox_24.svg');
+  @include text-size-weight($size-24);
+}
+
+.icon-speedometer-02-24 {
+  background-image: url('/public/icons/speedometer_02.24.svg');
+  @include text-size-weight($size-24);
+}
+
+.icon-modem-02-24 {
+  background-image: url('/public/icons/modem_02_24.svg');
+  @include text-size-weight($size-24);
+}
+
+.icon-discount-shape-50 {
+  background-image: url('/public/icons/discount_shape_50.svg');
+  @include text-size-weight($size-50);
+}
+
+.icon-edit-2-50 {
+  background-image: url('/public/icons/edit_2_50.svg');
+  @include text-size-weight($size-50);
+}
+
+.icon-personal-card-50 {
+  background-image: url('/public/icons/personalcard_50.svg');
+  @include text-size-weight($size-50);
+}
+
+.icon-wallet-check-50 {
+  background-image: url('/public/icons/wallet_check_50.svg');
+  @include text-size-weight($size-50);
+}

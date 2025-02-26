@@ -1,0 +1,106 @@
+.menu-inner-content {
+  padding: 24px 20px;
+  font-weight: 500;
+  justify-content: space-between;
+  min-width: 1000px;
+  margin: 0 auto 0 auto !important; // Centers the container horizontally
+  position: absolute;
+  background-color: var(--main-background-color);
+  width: 100%;
+  top: 100%;
+  z-index: -1;
+
+  .inner-content-body {
+    max-width: 1410px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 40px;
+    display: grid;
+    grid-template-columns: calc(67% - 40px) 33%;
+
+    .menu-inner-content__grid {
+      display: grid;
+      gap: 40px;
+      grid-template-columns: 50% calc(50% - 40px);
+
+      .menu-batch {
+        color: #a5a8ad;
+        font-size: 14px;
+        margin-bottom: 24px;
+      }
+    }
+
+    .header-add-image {
+      display: flex;
+      padding: 8px 16px 8px 8px;
+      align-items: center;
+      gap: 16px;
+      height: min-content;
+      border-radius: 20px;
+      background: var(--light-gray);
+
+      .image {
+        width: 167px;
+        height: 100px;
+      }
+
+      .gap-6 {
+        .description {
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
+          align-self: stretch;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 12px;
+          font-weight: 400;
+          line-height: 125%; /* 15px */
+        }
+
+        .arrow-right-text {
+          color: var(--WebSite-Red, #eb2343);
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 125%;
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+
+    .text-muted {
+      color: #a5a8ad;
+    }
+  }
+
+  .link-menu-item-wrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 16px;
+
+    &.second-column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .link-menu-item {
+      font-size: 16px;
+      line-height: 20px;
+      color: var(--text-dark);
+      font-weight: 500;
+      margin-bottom: 8px;
+      text-decoration: none;
+      display: inline-block;
+      max-width: 188px;
+
+      .text-muted {
+        display: inline-block;
+        line-height: 18px;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+    }
+    .text-muted.pointer {
+      max-width: 188px;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+// Customize your button styles here
+.custom-btn {
+  border-radius: 100px;
+  position: relative;
+  height: max-content;
+  font-size: 16px;
+  line-height: 125%;
+
+  font-weight: 500;
+  padding: 14px 20px;
+  color: #181b21;
+  outline: none !important;
+  align-items: center;
+  display: flex;
+  text-align: center;
+  box-sizing: border-box;
+
+  &.ant-btn-lg {
+    font-size: 18px;
+    padding: 18px 30px;
+    font-weight: 500;
+    line-height: 125%;
+  }
+
+  &.ant-btn-sm {
+    font-size: 14px;
+    padding: 9px 20px;
+    line-height: 125%;
+    font-weight: 500;
+  }
+
+  &.ant-btn-primary {
+    box-shadow: none;
+    display: inline-block;
+    border: none;
+    overflow: hidden;
+    transition: color 400ms ease-out;
+    /* Ensuring the hover effects apply to this element and not its content */
+    z-index: 1;
+
+    &:hover {
+      border: none;
+    }
+
+    &.blue {
+      color: #fff;
+      background: linear-gradient(90deg, #004bff 0%, #1d3bcc 100%);
+
+      &:hover {
+        color: white; /* Ensure text color remains white */
+        background: linear-gradient(90deg, #004bff 0%, #1d3bcc 100%);
+      }
+
+      &::before {
+        background-color: #eb2343;
+      }
+
+      &:active {
+        background-color: #2e334d;
+      }
+    }
+
+    &.black {
+      border: none;
+      background: #2e334d;
+      color: white;
+
+      &:hover {
+        color: white;
+        background: #2e334d;
+      }
+
+      &::before {
+        background: linear-gradient(90deg, #004bff 0%, #1d3bcc 100%);
+      }
+
+      &:active {
+        background-color: #eb2343;
+      }
+    }
+
+    &.gray {
+      border: none;
+      background: #dde3f0;
+      color: var(--text-muted);
+
+      &:hover {
+        color: var(--WebSite-Blue, #061f99);
+        background: #dde3f0;
+      }
+
+      &::before {
+        background-color: #f0f3fa;
+      }
+
+      &:active {
+        color: white;
+        background-color: #f0f3fa;
+      }
+    }
+
+    &.red {
+      color: #fff;
+      background-color: #eb2343;
+
+      &:hover {
+        color: white; /* Ensure text color remains white */
+        background-color: #eb2343;
+      }
+
+      &::before {
+        background: linear-gradient(90deg, #004bff 0%, #1d3bcc 100%);
+      }
+
+      &:active {
+        background-color: #2e334d;
+      }
+    }
+
+    &.white {
+      color: var(--text-black);
+      background: var(--WebSite-White, #fff);
+
+      &:hover {
+        color: var(--WebSite-Blue, #061f99);
+        background: var(--WebSite-White, #fff);
+      }
+    }
+
+    /* Pseudo-element for the circular hover animation */
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 300%;
+      height: 300%;
+      border-radius: 50%;
+      transform-origin: bottom left;
+      transform: translate(-65%, -50%) scale(0);
+      transition: transform 0.4s ease-out;
+      z-index: -1;
+    }
+
+    /* On hover, animate the circular shape */
+    &:hover::before {
+      transform: translate(-65%, -50%) scale(1);
+    }
+  }
+}

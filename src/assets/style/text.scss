@@ -1,0 +1,293 @@
+// Base SCSS mixin for generating text size and weight classes
+@mixin text-size-weight($size, $weight) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: 'CoFo Sans', sans-serif;
+}
+
+@mixin max-lines-mixin($maxLines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $maxLines; // Limit to 2 lines
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+$small-size: 16px;
+$medium-size: 18px;
+$large-size: 24px;
+
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-600: 600;
+$font-weight-700: 700;
+
+.text {
+  &-small {
+    &-400 {
+      @include text-size-weight($small-size, $font-weight-400);
+    }
+
+    &-500 {
+      @include text-size-weight($small-size, $font-weight-500);
+    }
+
+    &-600 {
+      @include text-size-weight($small-size, $font-weight-600);
+    }
+
+    &-700 {
+      @include text-size-weight($small-size, $font-weight-700);
+    }
+  }
+
+  &-medium {
+    &-400 {
+      @include text-size-weight($medium-size, $font-weight-400);
+    }
+
+    &-500 {
+      @include text-size-weight($medium-size, $font-weight-500);
+    }
+
+    &-600 {
+      @include text-size-weight($medium-size, $font-weight-600);
+    }
+
+    &-700 {
+      @include text-size-weight($medium-size, $font-weight-700);
+    }
+  }
+
+  &-large {
+    &-400 {
+      @include text-size-weight($large-size, $font-weight-400);
+    }
+
+    &-500 {
+      @include text-size-weight($large-size, $font-weight-500);
+    }
+
+    &-600 {
+      @include text-size-weight($large-size, $font-weight-600);
+    }
+
+    &-700 {
+      @include text-size-weight($large-size, $font-weight-700);
+    }
+  }
+}
+
+@font-face {
+  font-family: 'CoFo Sans Medium';
+  src: url('Assets/fonts/CoFoSans-Medium.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CoFo Sans Bold';
+  src: url('Assets/fonts/CoFoSans-Bold.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CoFo Sans';
+  src: url('Assets/fonts/CoFoSans-Regular.ttf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'CoFo Sans';
+  src: url('Assets/fonts/CoFoSans-Medium.ttf') format('opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'CoFo Sans';
+  font-weight: 600;
+  src: url('Assets/fonts/CoFoSans-Black.ttf') format('opentype');
+}
+
+@font-face {
+  font-family: 'CoFo Sans';
+  src: url('Assets/fonts/CoFoSans-Bold.ttf') format('opentype');
+  font-weight: 700;
+}
+
+.family-medium {
+  font-family: 'CoFo Sans Medium', sans-serif;
+}
+
+.family-bold {
+  font-family: 'CoFo Sans Bold', sans-serif;
+}
+
+.family-regular {
+  font-family: 'CoFo Sans', sans-serif;
+}
+
+@mixin generate-font-size-classes() {
+  @for $i from 8 through 50 {
+    .fs-#{$i} {
+      font-size: #{$i}px !important;
+      line-height: 125%;
+    }
+  }
+}
+
+@mixin generate-max-lines() {
+  @for $i from 1 through 50 {
+    .max-line-#{$i} {
+      @include max-lines-mixin($i);
+    }
+  }
+}
+
+@mixin generate-line-height-classes() {
+  @for $i from 8 through 50 {
+    .lh-#{$i} {
+      line-height: #{$i}px !important;
+    }
+  }
+}
+
+@include generate-font-size-classes();
+@include generate-max-lines();
+@include generate-line-height-classes();
+.text-centered {
+  text-align: center;
+}
+
+.fw-400 {
+  font-weight: 400 !important;
+}
+
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.fw-600 {
+  font-weight: 600 !important;
+}
+
+.fw-700 {
+  font-weight: 700 !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+.text-black {
+  color: var(--text-black) !important;
+}
+
+.text-dark {
+  color: var(--text-dark);
+}
+
+.text-link {
+  color: var(--text-blue);
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 40px; //40px
+  line-height: 125%;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 32px; //32px
+  line-height: 125%;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 28px; //28px.
+  line-height: 125%;
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 24px; //24px;
+  line-height: 125%;
+}
+
+h5 {
+  font-weight: 700;
+  font-size: 18px; //18px
+  line-height: 125%;
+}
+
+h6 {
+  font-weight: 700;
+  line-height: 125%;
+  font-size: 16px; //16px;
+}
+
+.h7 {
+  font-weight: 700;
+  font-size: 20px; //16px;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-weight: 700;
+    font-size: 24px; //40px
+    line-height: 125%;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 22px; //32px
+    line-height: 125%;
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: 20px; //28px.
+    line-height: 125%;
+  }
+
+  h4 {
+    font-weight: 700;
+    font-size: 18px; //24px;
+    line-height: 125%;
+  }
+
+  h5 {
+    font-weight: 700;
+    font-size: 16px; //18px
+  }
+
+  h6 {
+    font-weight: 700;
+    font-size: 14px; //16px;
+  }
+
+  .h7 {
+    font-weight: 700;
+    font-size: 18px; //16px;
+  }
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}

@@ -1,0 +1,107 @@
+$mobile-width: 1000px;
+
+.mobile-burger-menu {
+  display: none;
+  .user-icon-button {
+    font-weight: 700;
+    border-radius: 100px;
+
+    .user-icon-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 16px;
+      justify-content: start;
+      font-weight: 500;
+
+      * {
+        width: min-content;
+      }
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    display: block;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+  }
+
+  button {
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .open-button,
+  .close-button {
+    border-radius: 50%;
+    background: #dde3f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .open-button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .close-button {
+    margin-left: auto;
+    margin-bottom: 20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .primary-button {
+    background: linear-gradient(90deg, #004bff 0%, #1d3bcc 100%);
+    border-radius: 100px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 125%;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 0 auto;
+    width: 100%;
+
+    @media (min-width: 769px) {
+      display: none;
+    }
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 480px;
+    height: 100%;
+    background: white;
+    z-index: 100;
+    left: -100%;
+    transition: 0.2s linear;
+    padding: 20px;
+    overflow: auto;
+    @media (max-width: 620px) {
+      width: 100%;
+    }
+  }
+
+  .open {
+    left: 0;
+  }
+
+  .divider {
+    height: 1px;
+    background: #e6e9f0;
+    margin-bottom: 20px;
+  }
+}

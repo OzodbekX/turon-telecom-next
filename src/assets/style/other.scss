@@ -1,0 +1,72 @@
+@mixin generate-bg-font-classes($colors, $font-sizes) {
+  @each $color-name, $color-value in $colors {
+    @each $size in $font-sizes {
+      .fa-icon-#{$color-name}-fs-#{$size} {
+        color: #{$color-value} !important;
+        font-size: #{$size}px !important;
+      }
+    }
+  }
+}
+
+$colors: (
+  'red': #ff0000,
+  'blue': #0000ff,
+  'green': #00ff00,
+  'yellow': #ffff00,
+  'black': #000000,
+  'grey': #afb1b6,
+  'white': #ffffff,
+);
+
+$font-sizes: 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 36;
+
+@include generate-bg-font-classes($colors, $font-sizes);
+
+@mixin generate-border-radius() {
+  @for $i from 0 through 50 {
+    .border-radius-#{$i} {
+      border: 1px solid var(--border-color);
+      border-radius: #{$i}px;
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+.border {
+  border: 1px solid var(--border-color);
+
+  &-top {
+    border-top: 1px solid var(--border-color);
+  }
+
+  &-bottom {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  &-left {
+    border-left: 1px solid var(--border-color);
+  }
+
+  &-right {
+    border-right: 1px solid var(--border-color);
+  }
+}
+
+@include generate-border-radius();
+
+div,
+button,
+a,
+input,
+textarea,
+select {
+  outline: none;
+}

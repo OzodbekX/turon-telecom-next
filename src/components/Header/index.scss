@@ -1,0 +1,53 @@
+/* Variables for colors and sizing */
+
+$primary-color: #007bff;
+$font-color: #333;
+$border-radius: 20px;
+$gap: 32px;
+
+.header {
+  border-bottom: 1px solid var(--light-border-color);
+  background-color: var(--main-background-color);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 50;
+
+  .header-placeholder {
+    height: 104.5px;
+    width: 100%;
+  }
+
+  .mobile-header {
+    display: none;
+  }
+
+  .web-header {
+    display: block;
+  }
+
+  .ant-collapse-header {
+    padding: 16px 0 !important;
+  }
+
+  .ant-collapse-expand-icon {
+    display: none !important;
+  }
+
+  .ant-collapse-content-box {
+    padding: 0 !important;
+  }
+
+  /* Main header styling */
+}
+
+@keyframes shrink-width {
+  from {
+    width: 150vw;
+    left: -50vw;
+  }
+  to {
+    left: 0;
+    width: 100%;
+  }
+}

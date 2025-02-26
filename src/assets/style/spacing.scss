@@ -1,0 +1,122 @@
+// Mixin for generating margin classes
+@mixin generate-margin-classes() {
+  @for $i from 0 through 50 {
+    .m-#{$i} {
+      margin: #{$i}px;
+    }
+
+    .mt-#{$i} {
+      margin-top: #{$i}px;
+    }
+
+    .mr-#{$i} {
+      margin-right: #{$i}px;
+    }
+
+    .mb-#{$i} {
+      margin-bottom: #{$i}px;
+    }
+
+    .ml-#{$i} {
+      margin-left: #{$i}px;
+    }
+    .mx-#{$i} {
+      margin-left: #{$i}px;
+      margin-right: #{$i}px;
+    }
+    .my-#{$i} {
+      margin-bottom: #{$i}px;
+      margin-top: #{$i}px;
+    }
+  }
+}
+
+// Mixin for generating padding classes
+@mixin generate-padding-classes() {
+  @for $i from 0 through 50 {
+    .p-#{$i} {
+      padding: #{$i}px;
+    }
+
+    .pt-#{$i} {
+      padding-top: #{$i}px;
+    }
+
+    .pr-#{$i} {
+      padding-right: #{$i}px;
+    }
+
+    .pb-#{$i} {
+      padding-bottom: #{$i}px;
+    }
+
+    .pl-#{$i} {
+      padding-left: #{$i}px;
+    }
+    .px-#{$i} {
+      padding-left: #{$i}px;
+      padding-right: #{$i}px;
+    }
+    .py-#{$i} {
+      padding-bottom: #{$i}px;
+      padding-top: #{$i}px;
+    }
+  }
+}
+
+// Mixin for generating width classes
+@mixin generate-size-classes() {
+  @for $i from 0 through 100 {
+    .w-#{$i} {
+      width: #{$i}px;
+    }
+    .h-#{$i} {
+      height: #{$i}px;
+    }
+  }
+}
+
+.wid-100 {
+  width: 100%;
+}
+
+.wid-50 {
+  width: 50%;
+}
+
+.wid-75 {
+  width: 75%;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.gap-32 {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.d-block {
+  display: block;
+  align-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-item-center {
+  align-items: center;
+}
+
+// Generate all classes
+@include generate-margin-classes();
+@include generate-padding-classes();
+@include generate-size-classes();

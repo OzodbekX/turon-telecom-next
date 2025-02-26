@@ -1,0 +1,142 @@
+.ant-switch {
+  background-color: #e6e9f0;
+  height: 32px;
+  width: 60px;
+
+  .ant-switch-handle {
+    top: 3px;
+    height: 26px;
+    width: 26px;
+    inset-inline-start: 3px;
+
+    &:before {
+      border-radius: 50% !important;
+    }
+  }
+
+  &.ant-switch-checked {
+    background-color: #004bff;
+
+    .ant-switch-handle {
+      inset-inline-start: calc(100% - 29px);
+    }
+  }
+}
+
+.ant-input {
+  border-color: #e6e9f0;
+  border-radius: 16px;
+  font-size: 16px;
+  padding: 10px 16px;
+
+  &::placeholder {
+    color: #74767a;
+  }
+
+  &:hover,
+  &:focus {
+    border: 1px solid var(--WebSite-Gray-Line, #e6e9f0);
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.ant-checkbox-wrapper {
+  align-items: center;
+
+  .ant-checkbox {
+    height: 24px;
+    width: 24px;
+    box-shadow: none !important;
+
+    .ant-checkbox-inner {
+      height: 24px;
+      width: 24px;
+
+      &:after {
+        height: 12px;
+        width: 9px;
+      }
+    }
+
+    &.ant-checkbox-checked .ant-checkbox-inner {
+      background: rgba(46, 51, 77, 1) !important;
+      border-color: rgba(46, 51, 77, 1) !important;
+      box-shadow: none !important;
+    }
+  }
+}
+
+.ant-input-group-wrapper.ant-input-group-wrapper-status-error .ant-input-wrapper {
+  border: 1px solid #eb2343;
+}
+
+.ant-modal-content {
+  border-radius: 32px !important;
+}
+
+.ant-modal-close {
+  top: 30px !important;
+  right: 30px !important;
+  width: 40px;
+  height: 40px;
+  color: black;
+  background-color: #f0f3fa !important;
+  border-radius: 50% !important;
+
+  .ant-modal-close-icon {
+    color: black;
+  }
+
+  &:hover {
+    background: #f0f3fa;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.addon-before-custom.ant-input-group-wrapper,
+.addon-before-custom .ant-input-affix-wrapper {
+  border-radius: 16px;
+  border: none;
+  box-shadow: none;
+
+  .ant-input-wrapper {
+    border: 1px solid #e6e9f0;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+
+    .ant-input {
+      border-radius: 16px;
+      padding-left: 0;
+      border: none;
+      box-shadow: none;
+      vertical-align: middle;
+    }
+
+    .ant-input-group-addon {
+      border-radius: 16px 0 0 16px;
+      background-color: #ffffff;
+      border: none;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 44px;
+    }
+  }
+}
+
+.addon-before-custom.ant-input-group-wrapper-status-error .ant-input-wrapper {
+  border: 1px solid #eb2343;
+}
